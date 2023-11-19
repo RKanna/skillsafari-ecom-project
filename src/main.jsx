@@ -6,12 +6,15 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import LoginPage from "./components/Routes/login.routes.component.jsx";
 import PostLogin from "./components/Routes/PostLogin.component.jsx";
 import Navbar from "./components/Navbar.component.jsx";
+import Footer from "./components/Routes/Footer.component.jsx";
+import Menu from "./components/Routes/Menu.component.jsx";
 
 const Layout = ({ children }) => {
   return (
     <>
       <Navbar />
       {children}
+      <Footer />
     </>
   );
 };
@@ -21,7 +24,7 @@ const router = createBrowserRouter([
     path: "/menu",
     element: (
       <Layout>
-        <h1>Its a Home page</h1>
+        <Menu />
       </Layout>
     ),
   },
