@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.navbar {
+  min-width: 100vh;
+  height: 6rem;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3rem 0 3rem;
+}
+.nav-right {
+  display: flex;
+  gap: 3rem;
+}
+.nav-right a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: blueviolet;
+}
+.login {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 6rem);
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+.flexrow {
+  display: flex;
+  gap: 2rem;
+}
+.link {
+  text-decoration: none;
+}
+.for-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
