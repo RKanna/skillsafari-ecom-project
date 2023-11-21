@@ -21,46 +21,51 @@ const LoginPage = () => {
 
   return (
     <section className="for-flex">
-      <div>
-        <form action="">
-          <h1>Create a New Account</h1>
-          <label htmlFor="username">Username</label>
-          <input type="text" id="username" />
-          <div>
-            <label htmlFor="pass">Password</label>
-            <input type="text" id="pass" />
-          </div>
-          <div>
-            <label htmlFor="cnf-pass">Confirm Password</label>
-            <input type="text" id="cnf-pass" />
-          </div>
-        </form>
-      </div>
-      <div className="login">
-        <div className="flexrow">
-          <h2>Username</h2>
+      <h2>Login</h2>
+      <br />
+      <hr className="line" />
+      <br />
+      <form action="">
+        <div className="form-row-one">
+          <label htmlFor="email">Email Address</label>
           <input
+            className="for-padding"
             type="email"
-            value={email}
-            placeholder="Enter your Email"
-            onChange={(e) => setEmail(e.target.value)}
+            id="email"
+            placeholder="Please Enter Your Email"
           />
-        </div>
-        <div className="flexrow">
-          <h2>Password</h2>
+          <label htmlFor="password">Password</label>
           <input
+            className="for-padding"
             type="password"
-            value={password}
-            placeholder="Enter your password"
-            onChange={(e) => setPassword(e.target.value)}
+            id="password"
+            placeholder="Please Enter Your Password"
           />
         </div>
-        <button onClick={handleLogin}>Login</button>
-        <button>
-          <Link to="/Home" className="link">
-            Back to Home
-          </Link>
-        </button>
+        <div className="login-options">
+          <button className="btn-login-option">
+            <i class="ri-google-fill"></i> Login with Google
+          </button>
+
+          <button className="btn-login-option">
+            <i class="ri-facebook-box-fill"></i> Login with Facebook
+          </button>
+        </div>
+      </form>
+      <br />
+      <hr className="line" />
+      <div className="btns-div">
+        <div className="left-btn-side">
+          <br />
+          <button className="btn-log">Login</button>
+          <button className="create-acc">
+            <Link to="/CreateAccount">Create Account</Link>
+          </button>
+        </div>
+        <div className="right-btn-side">
+          <br />
+          <Link to="/forgotpassword">Forgot Password?</Link>
+        </div>
       </div>
     </section>
   );
