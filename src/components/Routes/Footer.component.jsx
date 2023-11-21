@@ -1,3 +1,4 @@
+import FacebookIcon from "@mui/icons-material/Facebook";
 const Footer = () => {
   return (
     <section className="main-foot">
@@ -34,6 +35,9 @@ const Footer = () => {
       </div>
 
       <p>© 2023 Shop Store</p>
+      <div>
+        <FacebookIcon />
+      </div>
     </section>
   );
 };
