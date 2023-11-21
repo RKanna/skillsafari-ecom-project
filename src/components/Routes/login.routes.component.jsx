@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import SignInOptions from "./SignInOptions.component";
+import TopLayout from "../TopLayout.component";
 // import { auth } from "./firebase.js";
 
 const LoginPage = () => {
@@ -21,9 +23,7 @@ const LoginPage = () => {
 
   return (
     <section className="for-flex">
-      <h2>Login</h2>
-      <br />
-      <hr className="line" />
+      <TopLayout content={"Login"} />
       <br />
       <form action="">
         <div className="form-row-one">
@@ -42,29 +42,27 @@ const LoginPage = () => {
             placeholder="Please Enter Your Password"
           />
         </div>
-        <div className="login-options">
-          <button className="btn-login-option">
-            <i className="ri-google-fill"></i> Login with Google
-          </button>
-
-          <button className="btn-login-option">
-            <i className="ri-facebook-box-fill"></i> Login with Facebook
-          </button>
-        </div>
+        <SignInOptions />
       </form>
       <br />
       <hr className="line" />
       <div className="btns-div">
         <div className="left-btn-side">
           <br />
-          <button className="btn-log">Login</button>
+          <button className="btn-log" style={{ cursor: "pointer" }}>
+            Login
+          </button>
           <button className="create-acc">
-            <Link to="/CreateAccount">Create Account</Link>
+            <Link className="create" to="/CreateAccount">
+              Create Account
+            </Link>
           </button>
         </div>
         <div className="right-btn-side">
           <br />
-          <Link to="/forgotpassword">Forgot Password?</Link>
+          <Link className="pass-reset" to="/forgotpassword">
+            Forgot Password?
+          </Link>
         </div>
       </div>
     </section>

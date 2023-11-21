@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
 import LoginPage from "./components/Routes/login.routes.component.jsx";
 import PostLogin from "./components/Routes/PostLogin.component.jsx";
 import Menu from "./components/Routes/Menu.component.jsx";
+import CreateAccount from "./components/Routes/CreateAccount.Route.jsx";
 
 const Layout = ({ children }) => {
   return (
@@ -59,6 +60,14 @@ const router = createBrowserRouter([
     element: (
       <Layout>
         <PostLogin />
+      </Layout>
+    ),
+  },
+  {
+    path: "/CreateAccount",
+    element: (
+      <Layout>
+        <CreateAccount />
       </Layout>
     ),
   },

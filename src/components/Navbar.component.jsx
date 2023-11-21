@@ -7,7 +7,7 @@ const Navbar = () => {
       <div className="nav-left">
         <div className="logo-container">
           <Link className="logo-txt" to="/Home">
-            <h1>Logo here</h1>
+            <h1>SS Shopee</h1>
           </Link>
         </div>
       </div>
