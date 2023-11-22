@@ -2,10 +2,18 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import SignInOptions from "./SignInOptions.component";
 import TopLayout from "../TopLayout.component";
+//firebase login functions
+import { signInWithGooglePopup } from "../../utils/index";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const signInWithGoogle = async () => {
+    const result = await signInWithGooglePopup();
+    console.log(result);
+  };
+
   return (
     <section className="for-flex">
       <TopLayout content={"Login"} />
@@ -27,7 +35,7 @@ const LoginPage = () => {
             placeholder="Please Enter Your Password"
           />
         </div>
-        <SignInOptions />
+        <SignInOptions onClick={signInWithGoogle} />
       </form>
       <br />
       <hr className="line" />

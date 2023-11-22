@@ -1,7 +1,8 @@
-const SignInOptions = () => {
+import { signInWithGooglePopup } from "../../utils/index";
+const SignInOptions = ({ onClick }) => {
   return (
     <div className="login-options">
-      <button className="btn-login-option">
+      <button className="btn-login-option" onClick={onClick}>
         <i className="ri-google-fill"></i> Login with Google
       </button>
 

@@ -199,11 +199,14 @@ form {
 }
 .new-account {
   padding: 1rem 15rem 1rem 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
 }
 .for-new-flex {
   display: flex;
   justify-content: space-between;
-  /* width: 100%; */
 }
 .form-row-one {
   width: 50%;

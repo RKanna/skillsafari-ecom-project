@@ -7,7 +7,7 @@ import LoginPage from "./components/Routes/login.routes.component.jsx";
 import PostLogin from "./components/Routes/PostLogin.component.jsx";
 import Menu from "./components/Routes/Menu.component.jsx";
 import CreateAccount from "./components/Routes/CreateAccount.Route.jsx";
-
+import "./index.scss";
 const Layout = ({ children }) => {
   return (
     <>
