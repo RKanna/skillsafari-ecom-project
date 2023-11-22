@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Link } from "react-router-dom";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 const Navbar = () => {
   return (
@@ -14,7 +15,8 @@ const Navbar = () => {
       <div className="nav-right">
         <Link to="/Menu">Menu</Link>
         <Link to="/Login">Sign Up/Login</Link>
-        <Link to="/contact">Contact</Link>
+        {/* <Link to="/contact">Contact</Link> */}
+        <ShoppingCartIcon className="cart" />
       </div>
     </section>
   );

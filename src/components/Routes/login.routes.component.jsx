@@ -2,25 +2,10 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import SignInOptions from "./SignInOptions.component";
 import TopLayout from "../TopLayout.component";
-// import { auth } from "./firebase.js";
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const handleLogin = async () => {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    try {
-      const result = await firebase.auth().signInWithPopup(provider);
-      // Handle successful authentication, e.g., redirect to private page
-      console.log(result.user);
-      // You can use react-router-dom or any other method to redirect to private.jsx
-    } catch (error) {
-      // Handle errors
-      console.error(error);
-    }
-  };
-
   return (
     <section className="for-flex">
       <TopLayout content={"Login"} />

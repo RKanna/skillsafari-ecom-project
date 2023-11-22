@@ -1,5 +1,6 @@
 import TopLayout from "../TopLayout.component";
 import SignInOptions from "./SignInOptions.component";
+import { Link } from "react-router-dom";
 
 const CreateAccount = () => {
   return (
@@ -41,6 +42,9 @@ const CreateAccount = () => {
           <SignInOptions />
         </div>
       </div>
+      <Link className="backtolog" to="/Login">
+        Back to Login
+      </Link>
     </section>
   );
 };
