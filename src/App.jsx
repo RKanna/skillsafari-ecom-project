@@ -8,12 +8,15 @@ import PostLogin from "./components/Routes/PostLogin.component.jsx";
 import Menu from "./components/Routes/Menu.component.jsx";
 import CreateAccount from "./components/Routes/CreateAccount.Route.jsx";
 import "./index.scss";
+import { UserProvider } from "./context/UserContext.jsx";
 const Layout = ({ children }) => {
   return (
     <>
-      <Navbar />
-      {children}
-      <Footer />
+      <UserProvider>
+        <Navbar />
+        {children}
+        <Footer />
+      </UserProvider>
     </>
   );
 };
@@ -68,6 +71,14 @@ const router = createBrowserRouter([
     element: (
       <Layout>
         <CreateAccount />
+      </Layout>
+    ),
+  },
+  {
+    path: "/userdashboard",
+    element: (
+      <Layout>
+        <PostLogin />
       </Layout>
     ),
   },

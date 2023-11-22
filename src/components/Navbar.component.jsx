@@ -8,14 +8,14 @@ const Navbar = () => {
       <div className="nav-left">
         <div className="logo-container">
           <Link className="logo-txt" to="/Home">
-            <h1>SS Shopee</h1>
+            <h1>GadgetMart</h1>
           </Link>
         </div>
       </div>
       <div className="nav-right">
         <Link to="/Menu">Menu</Link>
         <Link to="/Login">Sign Up/Login</Link>
-        {/* <Link to="/contact">Contact</Link> */}
+
         <ShoppingCartIcon className="cart" />
       </div>
     </section>

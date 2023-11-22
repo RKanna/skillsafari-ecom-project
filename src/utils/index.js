@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDuMWRjTZfSVaFX8jY5vk7FdKza4cMM5ic",
@@ -20,4 +21,36 @@ const googleProvider = new GoogleAuthProvider();
 
 const signInWithGooglePopup = () => signInWithPopup(appAuth, googleProvider);
 
-export { signInWithGooglePopup };
+//firestore DB
+const appDB = getFirestore(app);
+
+const createUserDocumentFromAuth = async (userAuth) => {
+  if (!userAuth) return;
+  const userDocRef = doc(appDB, "users", userAuth.uid);
+  const userSnapShot = await getDoc(userDocRef);
+  console.log(userSnapShot);
+
+  if (!userSnapShot.exists()) {
+    const { displayName, email } = userAuth;
+    const createdAt = new Date();
+    try {
+      await setDoc(userDocRef, {
+        displayName,
+        email,
+        createdAt,
+      });
+    } catch (err) {
+      console.log("Error creating User", err.message);
+    }
+  }
+  return userDocRef;
+};
+
+export { signInWithGooglePopup, createUserDocumentFromAuth };
+
+// const addData = async (collection, id, val) => {
+//   const res = await setDoc(doc(appDB, collection, id), val);
+//   console.log(res);
+// };
+// addData("cities", "LA", { name: "Los Angeles", state: "CA", country: "USA" });
+// addData("cities", "WD", { name: "Washington", state: "DC", country: "USA" });

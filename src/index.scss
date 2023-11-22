@@ -138,10 +138,10 @@ form {
   border: none;
   border-radius: 0.2rem;
   transition: all 0.5s ease;
-}
-.btn-log:hover {
-  background-color: blue;
-  color: white;
+  &:hover {
+    background-color: blue;
+    color: white;
+  }
 }
 .left-btn-side {
   margin-top: 1rem;
@@ -220,4 +220,12 @@ form {
 }
 .cart {
   cursor: pointer;
+}
+.postlogin {
+  min-width: 100%;
+  min-height: calc(100vh - 22rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
