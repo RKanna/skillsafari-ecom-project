@@ -4,13 +4,15 @@ const UserContext = createContext();
 
 export const UserProvider = ({ children }) => {
   const [userEmail, setUserEmail] = useState(null);
+  const [displayName, setDisplayName] = useState(null);
 
-  const setUser = (email) => {
+  const setUser = (email, name) => {
     setUserEmail(email);
+    setDisplayName(name);
   };
 
   return (
-    <UserContext.Provider value={{ userEmail, setUser }}>
+    <UserContext.Provider value={{ userEmail, displayName, setUser }}>
       {children}
     </UserContext.Provider>
   );

@@ -12,17 +12,16 @@ import { useUser } from "../../context/UserContext.jsx";
 
 const LoginPage = () => {
   const { setUser } = useUser();
+
   const [loginVariable, setLoginVariable] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const signInWithGoogle = async (event) => {
     event.preventDefault();
-
     const { user } = await signInWithGooglePopup();
     const userDocRef = await createUserDocumentFromAuth(user);
-    setUser(user.email);
-
+    setUser(user.email, user.displayName);
     navigate("/userdashboard");
   };
 
